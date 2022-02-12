@@ -11,22 +11,22 @@ public class Library implements Filter{
     }
 
     @Override
-    public ArrayList<Class.Song> filterByGenre(String genre) {
+    public ArrayList<Song> filterByGenre(String genre) {
         return null;
     }
 
     @Override
-    public ArrayList<Class.Song> filterByYear(Date year) {
+    public ArrayList<Song> filterByYear(Date year) {
         return null;
     }
 
     @Override
-    public ArrayList<Class.Song> orderByDuration(Boolean longToShort) {
+    public ArrayList<Song> orderByDuration(Boolean longToShort) {
         return null;
     }
 
     @Override
-    public ArrayList<Class.Song> orderByDate(Boolean oldToNew) {
+    public ArrayList<Song> orderByDate(Boolean oldToNew) {
         return null;
     }
 }
