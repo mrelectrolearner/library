@@ -1,13 +1,13 @@
 package Controller;
 
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.List;
+
 import Class.Song;
 
 public interface Filter {
-    ArrayList<Song> filterByGenre(String genre);
-    ArrayList<Song> filterByYear(Date year);
-    ArrayList<Song> orderByDuration(Boolean longToShort);
-    ArrayList<Song> orderByDate(Boolean oldToNew);
+    List<Song> filterByGenre(String genre);
+    List<Song> filterByYear(String year);
+    List<Song> orderByDuration(Boolean longToShort);
+    List<Song> orderByDate(Boolean oldToNew);
 
 }
