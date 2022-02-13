@@ -38,7 +38,7 @@ public class Song {
         this.description = description;
         this.duration = Integer.parseInt(helpDuration.substring(0,1)) + Integer.parseInt(helpDuration.substring(3,4));
         int songYear=Integer.parseInt(launchDate.substring(6,9));
-        int songMonth=Integer.parseInt(launchDate.substring(2,4));
+        int songMonth=Integer.parseInt(launchDate.substring(3,4));
         int songDay=Integer.parseInt(launchDate.substring(0,1));
         this.launchDate = new GregorianCalendar(songYear,0,songDay);
         this.launchDate.add(Calendar.MONTH, songMonth);
@@ -97,5 +97,19 @@ public class Song {
     }
     public void setDuration(int duration) {
         this.duration = duration;
+    }
+
+    @Override
+    public String toString() {
+        return "Song{" +
+                "idSong=" + idSong +
+                ", name='" + name + '\'' +
+                ", genre='" + genre + '\'' +
+                ", cover='" + cover + '\'' +
+                ", description='" + description + '\'' +
+                ", launchDate=" + launchDate.getTime()+
+                ", duration=" + duration +
+                ", author='" + author + '\'' +
+                '}';
     }
 }

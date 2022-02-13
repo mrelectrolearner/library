@@ -69,5 +69,9 @@ public class Library implements Filter {
 
         return filteredSongList;
     }
+
+    public List<Song> getSongList() {
+        return songList;
+    }
 }
 
