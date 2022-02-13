@@ -3,12 +3,17 @@ package Class;
 import Controller.Filter;
 import Controller.Process;
 
+import java.util.Collections;
 import java.util.List;
 
-public class Library implements Filter {
+public class Library implements Filter,Comparable<Song> {
     private List<Song> songList;
+    Song song;
 
-
+    @Override
+    public int compareTo(Song o) {
+        return 0;
+    }
     public Library(){
         Process process= new Process();
         this.songList = process.createlibraryOfSong();
@@ -46,7 +51,7 @@ public class Library implements Filter {
 
     @Override
     public List<Song> orderByDuration(Boolean longToShort) {
-
+        Collections.sort(this.songList.);
         return null;
     }
 
@@ -54,5 +59,7 @@ public class Library implements Filter {
     public List<Song> orderByDate(Boolean oldToNew) {
         return null;
     }
+
+
 }
 
