@@ -37,11 +37,12 @@ public class Song {
         this.cover = cover;
         this.description = description;
         this.duration = Integer.parseInt(helpDuration.substring(0,1)) + Integer.parseInt(helpDuration.substring(3,4));
-        int songYear=Integer.parseInt(launchDate.substring(6,9));
-        int songMonth=Integer.parseInt(launchDate.substring(3,4));
-        int songDay=Integer.parseInt(launchDate.substring(0,1));
+        int songYear=Integer.parseInt(launchDate.substring(6,10));
+        int songMonth=Integer.parseInt(launchDate.substring(3,5));
+        int songDay=Integer.parseInt(launchDate.substring(0,2));
         this.launchDate = new GregorianCalendar(songYear,0,songDay);
         this.launchDate.add(Calendar.MONTH, songMonth);
+
 
     }
 
@@ -107,7 +108,7 @@ public class Song {
                 ", genre='" + genre + '\'' +
                 ", cover='" + cover + '\'' +
                 ", description='" + description + '\'' +
-                ", launchDate=" + launchDate.getTime()+
+                ", launchDate=" + launchDate.get(Calendar.DAY_OF_MONTH)+"/"+launchDate.get(Calendar.MONTH)+"/"+launchDate.get(Calendar.YEAR)+
                 ", duration=" + duration +
                 ", author='" + author + '\'' +
                 '}';
