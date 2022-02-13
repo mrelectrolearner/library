@@ -13,25 +13,24 @@ public class Song {
     private String genre;
     private String cover;
     private String description;
-    private String duration;
+    private static String helpDuration;
     private String launchDate;
+    private int duration;
+    private String author;
+
+
 
     /**
      * Constructor con parametros
-     * @param name
-     * @param genre
-     * @param cover
-     * @param description
-     * @param duration
-     * @param launchDate
      */
-    public Song(String name, String genre, String cover, String description, String duration, String launchDate) {
+    public Song(String name,String author,  String genre, String cover, String description, String helpDuration, String launchDate) {
         this.idSong+=1;
         this.name = name;
+        this.author = author;
         this.genre = genre;
         this.cover = cover;
         this.description = description;
-        this.duration = duration;
+        this.duration = Integer.parseInt(helpDuration.substring(0,1)) + Integer.parseInt(helpDuration.substring(3,4));
         this.launchDate = launchDate;
     }
 
@@ -41,4 +40,51 @@ public class Song {
     public Song() {
     }
 
+
+
+    /**
+     * Getter and Setter
+     */
+    public int getIdSong() {
+        return idSong;
+    }
+    public void setIdSong(int idSong) {
+        this.idSong = idSong;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getGenre() {
+        return genre;
+    }
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+    public String getCover() {
+        return cover;
+    }
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    public String getLaunchDate() {
+        return launchDate;
+    }
+    public void setLaunchDate(String launchDate) {
+        this.launchDate = launchDate;
+    }
+    public int getDuration() {
+        return duration;
+    }
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
 }
