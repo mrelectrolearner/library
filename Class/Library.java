@@ -66,12 +66,12 @@ public class Library implements Filter {
             Collections.sort(filteredSongList,new DateComparator().reversed());
         }
 
-
         return filteredSongList;
     }
 
     public List<Song> getSongList() {
         return songList;
     }
+
 }
 
