@@ -10,5 +10,25 @@ public class Library {
     }
 
 
+    @Override
+    public ArrayList<Song> filterByGenre(String genre) {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Song> filterByYear(Date year) {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Song> orderByDuration(Boolean longToShort) {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Song> orderByDate(Boolean oldToNew) {
+        return null;
+    }
+
 }
 

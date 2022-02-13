@@ -16,6 +16,7 @@ public class Song {
     private static String helpDuration;
     private String launchDate;
     private int duration;
+
     private String author;
 
 
@@ -23,7 +24,9 @@ public class Song {
     /**
      * Constructor con parametros
      */
+
     public Song(String name,String author,  String genre, String cover, String description, String helpDuration, String launchDate) {
+
         this.idSong+=1;
         this.name = name;
         this.author = author;
