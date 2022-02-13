@@ -1,14 +1,14 @@
 package Class;
 
-import java.util.ArrayList;
-import java.util.Date;
+import Controller.Process;
+public class Library {
 
-public class Library implements Filter{
-    private ArrayList<Song> songsList;
 
-    public Library(){
-        this.songsList=new ArrayList<>();
+    public void CreateListSong(){
+        Process process= new Process();
+        process.createlibraryOfSong();
     }
+
 
     @Override
     public ArrayList<Song> filterByGenre(String genre) {
@@ -29,4 +29,6 @@ public class Library implements Filter{
     public ArrayList<Song> orderByDate(Boolean oldToNew) {
         return null;
     }
+
 }
+

@@ -17,14 +17,19 @@ public class Song {
     private String launchDate;
     private int duration;
 
+    private String author;
+
 
 
     /**
      * Constructor con parametros
      */
-    public Song(String name, String genre, String cover, String description, String helpDuration, String launchDate) {
+
+    public Song(String name,String author,  String genre, String cover, String description, String helpDuration, String launchDate) {
+
         this.idSong+=1;
         this.name = name;
+        this.author = author;
         this.genre = genre;
         this.cover = cover;
         this.description = description;
