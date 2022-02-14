@@ -19,6 +19,7 @@ public class Main {
                     "3. Filter library for year. \n" +
                     "4. Order by duration.\n" +
                     "5. Order by date.\n" +
+                    "6. Create playlist." +
                     "Enter a number: ");
             int select = scanner.nextInt();
 
@@ -44,6 +45,13 @@ public class Main {
                 case 5:
                     System.out.println("Order by date: \n");
                     printPlaylist(library.orderByDate(true));
+                    break;
+                case 6:
+
+                    System.out.println("Select a song from the library: \n");
+                    printPlaylist(library.getSongList());
+
+
                     break;
                 default:
                     System.out.println("Invalid selection.");
