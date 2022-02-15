@@ -3,6 +3,13 @@ package SongComparator;
 import java.util.Comparator;
 import Class.Song;
 
+/**
+ * Implement a comparator that allow to order the songs by the launch date.
+ * @version 1.0.0 2022-02-15.
+ * @author Luis Felipe Rivas.
+ * @since 1.0.0 2022-02-15.
+ */
+
 public class DateComparator implements Comparator {
     /**
      * Compares its two arguments for order.  Returns a negative integer,
@@ -38,6 +45,7 @@ public class DateComparator implements Comparator {
      * this fact.  The recommended language is "Note: this comparator
      * imposes orderings that are inconsistent with equals."
      */
+
     @Override
     public int compare(Object obj1, Object obj2) {
         Song song1=(Song) obj1;
@@ -45,6 +53,11 @@ public class DateComparator implements Comparator {
         return song1.getLaunchDate().compareTo(song2.getLaunchDate());
     }
 
+    /**
+     * Iniverte el resultado de la comparacion de las fechas de lanzamiento de dos canciones.
+     * @return -1: si la fecha de la cancion uno es mayor a la dos, 0: si son iguales y
+     * 1: si la fecha de la cancion uno es menor.
+     */
     @Override
     public Comparator reversed() {
         return Comparator.super.reversed();
