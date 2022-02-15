@@ -8,9 +8,9 @@ it contains:
 
 - A (principal) library with all the songs.
 
-- A function that create a play list with the songs of the library.
+- A function that create a playlist with the songs of the library for an user.
 
-- Every song is saved with his information.
+- Every song is saved with its information.
 
 - The library may be filtered by genre and duration of the songs.
 
