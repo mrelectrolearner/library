@@ -4,11 +4,19 @@ import Controller.Filter;
 import Controller.Process;
 import SongComparator.DateComparator;
 import SongComparator.DurationComparator;
-/*
-import java.util.Collections;
-import java.util.Comparator;
+
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Collections;
+
+/*
+import java.util.Comparator;
 import java.util.stream.Collectors;
+
+
+
+
 =======
 import java.util.*;
 */
@@ -53,16 +61,18 @@ public class Library implements Filter {
     }
 
     @Override
-    public List<Song> orderByDuration(Boolean longToShort) {/*
-
+    public List<Song> orderByDuration(Boolean longToShort) {
+        /*
+         //Santiago
         if(longToShort){
             //songList.sort((songList.get(0),songList.get(1)) -> (songList.get(0).getDuration().compareTo(songList.get(1).getDuration())));
             //Collections.sort(songList,(s1,s2)-> s1.getDuration().compareTo(s2.setDuration()));
             return songList.stream().sorted(Comparator.comparingInt(Song::getDuration)).collect(Collectors.toList());//Ascendente
         }else{
             return songList.stream().sorted(Comparator.comparingInt(Song::getDuration).reversed()).collect(Collectors.toList());//Descendente
-        }
+        }*/
 
+        //Luis
         List<Song> filteredSongList=this.songList;
         if(longToShort) {
             Collections.sort(filteredSongList, new DurationComparator());
@@ -70,7 +80,7 @@ public class Library implements Filter {
             Collections.sort(filteredSongList,new DurationComparator().reversed());
         }
         return filteredSongList;
-*/
+
     }
 
     @Override
