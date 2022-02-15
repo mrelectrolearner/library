@@ -6,7 +6,7 @@ import Class.Library;
 import Class.Song;
 import Class.User;
 /**
- * Represent the interface show to the user and its interaction with the library.
+ * It represents the interface with the user and its basic operations.
  * @version 1.0.0 2022-02-15.
  * @author Santiago Lezcano santiago.lezcano99@gmail.com
  *          Luis Felipe Rivas- luisfelorivas@gmail.com
@@ -14,8 +14,12 @@ import Class.User;
  */
 public class Main {
     /**
-     *Execute the program and allow the user interact with a library.
-     *
+     * Runs the program and allows the user to interact with the song library.
+     * @param args
+     * @version 1.0.0 2022-02-15.
+     * @author Santiago Lezcano santiago.lezcano99@gmail.com
+     *           Luis Felipe Rivas- luisfelorivas@gmail.com
+     * @since 1.0.0 2022-02-15.
      */
     public static void main(String[] args) {
         try {
@@ -99,6 +103,14 @@ public class Main {
 
 
     }
+    /**
+     * prints the user's playlist
+     * @param playlist List type Song
+     * @version 1.0.0 2022-02-15.
+     * @author Santiago Lezcano santiago.lezcano99@gmail.com
+     *           Luis Felipe Rivas- luisfelorivas@gmail.com
+     * @since 1.0.0 2022-02-15.
+     */
     private static void printPlaylist(List<Song> playlist){
         int counter=0;
         for (Song song:playlist) {

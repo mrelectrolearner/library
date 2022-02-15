@@ -29,41 +29,55 @@ public class Library implements Filter {
         this.songList = process.createlibraryOfSong();
     }
 
+
     /**
      * Filter the library by genre.
      * @param genre genre use for filter the songs.
      * @return playlist filter by genre.
      */
+
     @Override
     public List<Song> filterByGenre(String genre) {
-        List<Song> filteredSongList =new ArrayList<>();
-        String songGenre;
-        for(Song song:this.songList){
-            songGenre =song.getGenre();
-            if(songGenre.equalsIgnoreCase(genre)){
-                filteredSongList.add(song);
-            }
+        try {
+            List<Song> filteredSongList = new ArrayList<>();
+            String songGenre;
+            for (Song song : this.songList) {
+                songGenre = song.getGenre();
+                if (songGenre.equalsIgnoreCase(genre)) {
+                    filteredSongList.add(song);
+                }
 
+            }
+            return filteredSongList;
+        }catch(Exception e){
+            System.out.println(e.getMessage());
         }
-        return filteredSongList;
+        return null;
     }
+
 
     /**
      * Filter the library by the launch year.
      * @param year int the launch year use to filter the library.
      * @return List<Song> playlist filter by year.
      */
+
     @Override
     public List<Song> filterByYear(int year) {
-        List<Song> filteredSongList =new ArrayList<>();
-        int songYear;
-        for(Song song: this.songList){
-            songYear=song.getLaunchDate().get(Calendar.YEAR);
-            if (songYear==year){
-                filteredSongList.add(song);
+        try{
+            List<Song> filteredSongList =new ArrayList<>();
+            int songYear;
+            for(Song song: this.songList){
+                songYear=song.getLaunchDate().get(Calendar.YEAR);
+                if (songYear==year){
+                    filteredSongList.add(song);
+                }
             }
+            return filteredSongList;
+        }catch(Exception exception){
+            System.out.println(exception.getMessage());
         }
-        return filteredSongList;
+        return null;
     }
 
     /**
@@ -71,16 +85,22 @@ public class Library implements Filter {
      * @param longToShort determine if tha song is order from long to short.
      * @return playlist order by duration.
      */
+
     @Override
     public List<Song> orderByDuration(Boolean longToShort) {
-        List<Song> filteredSongList=this.songList;
-        if(longToShort) {
-            Collections.sort(filteredSongList, new DurationComparator());
-        }else {
-            Collections.sort(filteredSongList,new DurationComparator().reversed());
-        }
-        return filteredSongList;
 
+        try {
+            List<Song> filteredSongList = this.songList;
+            if (longToShort) {
+                Collections.sort(filteredSongList, new DurationComparator());
+            } else {
+                Collections.sort(filteredSongList, new DurationComparator().reversed());
+            }
+            return filteredSongList;
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
     /**
@@ -88,22 +108,30 @@ public class Library implements Filter {
      * @param oldToNew determine if the library is show from old to new songs.
      * @return playlist order by date.
      */
+
     @Override
     public List<Song> orderByDate(Boolean oldToNew) {
-        List<Song> filteredSongList=this.songList;
-        if(oldToNew) {
-            Collections.sort(filteredSongList, new DateComparator());
-        }else {
-            Collections.sort(filteredSongList,new DateComparator().reversed());
-        }
+        try {
+            List<Song> filteredSongList = this.songList;
+            if (oldToNew) {
+                Collections.sort(filteredSongList, new DateComparator());
+            } else {
+                Collections.sort(filteredSongList, new DateComparator().reversed());
+            }
 
-        return filteredSongList;
+            return filteredSongList;
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
+
 
     /**
      * get the library's list of songs.
      * @return library's list of songs.
      */
+
     public List<Song> getSongList() {
         return songList;
     }
