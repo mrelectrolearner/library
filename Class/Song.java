@@ -11,7 +11,6 @@ import java.util.GregorianCalendar;
 public class Song {
     /**
      * Attributes of class
-     * @version 1.0.0 2022-02-15.
      * @author Santiago Lezcano santiago.lezcano99@gmail.com
      * @since 1.0.0 2022-02-15.
      */
@@ -28,7 +27,6 @@ public class Song {
 
     /**
      * Constructor with parameters
-     * @version 1.0.0 2022-02-15.
      * @author Santiago Lezcano santiago.lezcano99@gmail.com
      * @since 1.0.0 2022-02-15.
      * @param name name of song type String
@@ -58,7 +56,6 @@ public class Song {
     }
     /**
      * encapsulation
-     * @version 1.0.0 2022-02-15.
      * @author Santiago Lezcano santiago.lezcano99@gmail.com
      * @since 1.0.0 2022-02-15.
      */
@@ -105,17 +102,17 @@ public class Song {
         this.duration = duration;
     }
 
+    /**
+     *Show the information about the song attributes.
+     * @return information about the song attributes.
+     */
     @Override
     public String toString() {
-        return "Song{" +
-                "idSong=" + idSong +
-                ", name='" + name + '\'' +
-                ", genre='" + genre + '\'' +
-                ", cover='" + cover + '\'' +
-                ", description='" + description + '\'' +
-                ", launchDate=" + launchDate.get(Calendar.DAY_OF_MONTH)+"/"+launchDate.get(Calendar.MONTH)+"/"+launchDate.get(Calendar.YEAR)+
-                ", duration=" + duration +
-                ", author='" + author + '\'' +
-                '}';
+        return "Song{" + "idSong=" + idSong + ", name='" + name + '\''
+                + ", genre='" + genre + '\'' + ", cover='" + cover + '\''
+                + ", description='" + description + '\''
+                + ", launchDate=" + launchDate.get(Calendar.DAY_OF_MONTH)+"/"
+                +launchDate.get(Calendar.MONTH)+"/"+launchDate.get(Calendar.YEAR)
+                +", duration=" + duration + ", author='" + author + '\'' +   '}';
     }
 }
