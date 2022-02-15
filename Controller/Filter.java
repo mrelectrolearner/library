@@ -6,6 +6,9 @@ import Class.Song;
 
 /**
  * Represent a filter of the library and its basic operations (filter and order).
+ * @version 1.0.0 2022-02-15.
+ * @author  Luis Felipe Rivas- luisfelorivas@gmail.com
+ * @since 1.0.0 2022-02-15.
  */
 public interface Filter {
     /**

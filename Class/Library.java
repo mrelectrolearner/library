@@ -13,6 +13,9 @@ import java.util.Collections;
 
 /**
  * Representa una biblioteca de canciones y  algunas de sus operaciones basicas de orden y filtrado.
+ * @version 1.0.0 2022-02-15.
+ * @author  Luis Felipe Rivas- luisfelorivas@gmail.com
+ * @since 1.0.0 2022-02-15.
  */
 public class Library implements Filter {
     private final List<Song> songList;

@@ -5,7 +5,17 @@ import java.util.Scanner;
 import Class.Library;
 import Class.Song;
 import Class.User;
+/**
+ * Representa la interface con el usuario y sus operaciones basicas.
+ * @version 1.0.0 2022-02-15.
+ * @author  Luis Felipe Rivas- luisfelorivas@gmail.com
+ * @since 1.0.0 2022-02-15.
+ */
 public class Main {
+    /**
+     * Ejecuta el programa y le permite al usuario interactuar con la biblioteca de canciones.
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             Library library = new Library();
