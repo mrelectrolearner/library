@@ -53,11 +53,6 @@ public class DateComparator implements Comparator {
         return song1.getLaunchDate().compareTo(song2.getLaunchDate());
     }
 
-    /**
-     * Iniverte el resultado de la comparacion de las fechas de lanzamiento de dos canciones.
-     * @return -1: si la fecha de la cancion uno es mayor a la dos, 0: si son iguales y
-     * 1: si la fecha de la cancion uno es menor.
-     */
     @Override
     public Comparator reversed() {
         return Comparator.super.reversed();

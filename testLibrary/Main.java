@@ -15,11 +15,10 @@ import Class.User;
 public class Main {
     /**
      * Runs the program and allows the user to interact with the song library.
-     * @param args
-     * @version 1.0.0 2022-02-15.
      * @author Santiago Lezcano santiago.lezcano99@gmail.com
-     *           Luis Felipe Rivas- luisfelorivas@gmail.com
+     *         Luis Felipe Rivas- luisfelorivas@gmail.com
      * @since 1.0.0 2022-02-15.
+     * @param args
      */
     public static void main(String[] args) {
         try {
@@ -31,16 +30,17 @@ public class Main {
             while (true) {
                 try {
 
-                    System.out.println("What do you want to do " + userName + " ?\n" +
-                            "1. Show library. \n" +
-                            "2. Filter library for genre. \n" +
-                            "3. Filter library for year. \n" +
-                            "4. Order by duration long to short.\n" +
-                            "5. Order by duration short to long.\n" +
-                            "6. Order by date old to new.\n" +
-                            "7. Order by date new to old.\n" +
-                            "8. Create playlist.\n" +
-                            "Enter a number: ");
+                    System.out.println("What do you want to do " + userName + " ?\n"
+                            +"1. Show library. \n"
+                            +"2. Filter library for genre. \n"
+                            +"3. Filter library for year. \n"
+                            +"4. Order by duration long to short.\n"
+                            +"5. Order by duration short to long.\n"
+                            +"6. Order by date old to new.\n"
+                            +"7. Order by date new to old.\n"
+                            +"8. Add songs to the playlist.\n"
+                            +"9. Show user playlist\n"
+                            +"Enter a number: ");
                     int selectBehavior = scanner.nextInt();
 
                     switch (selectBehavior) {
@@ -75,16 +75,20 @@ public class Main {
                             printPlaylist(library.orderByDate(false));
                             break;
                         case 8:
-
-
                             printPlaylist(library.getSongList());
                             System.out.println("\nSelect a song from the library: ");
                             int selectSong = scanner.nextInt();
                             Song newSong = library.getSongList().get(selectSong);
                             System.out.println("The song: " + newSong.getName() + " was added to your playlist \n");
                             user.addSongToPlaylist(newSong);
-
-
+                            break;
+                        case 9:
+                            if (user.getPlaylist()==null){
+                                System.out.println("The playlist is empty");
+                            }else {
+                                System.out.println("your playlist:\n");
+                                printPlaylist(user.getPlaylist());
+                            }
                             break;
                         default:
                             System.out.println("\n Invalid election.\n");
@@ -106,7 +110,6 @@ public class Main {
     /**
      * prints the user's playlist
      * @param playlist List type Song
-     * @version 1.0.0 2022-02-15.
      * @author Santiago Lezcano santiago.lezcano99@gmail.com
      *           Luis Felipe Rivas- luisfelorivas@gmail.com
      * @since 1.0.0 2022-02-15.
