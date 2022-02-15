@@ -1,19 +1,20 @@
 package Class;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class User {
     private int idUser=0;
     private final String name;
-    private ArrayList<Song> playlist;
+    private List<Song> playlist;
 
     public User(String name){
         this.idUser+=1;
         this.name=name;
-        ArrayList<Song> playlist=new ArrayList<>();
+        List<Song> playlist=new ArrayList<>();
     }
     public void addSongToPlaylist(Song songToAdd){
-        playlist.add(songToAdd);
+        this.playlist.add(songToAdd);
     }
 
     @Override
