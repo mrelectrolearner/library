@@ -1,15 +1,19 @@
 package Class;
-//Cancion(id(autocrementable),Nombre,genero,fechaLanzamiento,caratula,descripcion,duracion)
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-
 /**
- * Clase donde se creara cada cancion
+ * structure of the song, this class creates the parameters and encapsulates them.
+ * @version 1.0.0 2022-02-15.
+ * @author Santiago Lezcano santiago.lezcano99@gmail.com
+ * @since 1.0.0 2022-02-15.
  */
 public class Song {
     /**
-     * Atributos de la clase
+     * Attributes of class
+     * @version 1.0.0 2022-02-15.
+     * @author Santiago Lezcano santiago.lezcano99@gmail.com
+     * @since 1.0.0 2022-02-15.
      */
     private static int counter;
     private int idSong=0;
@@ -20,17 +24,22 @@ public class Song {
     private static String helpDuration;
     private Calendar launchDate;
     private Integer duration;
-
     private String author;
 
-
-
     /**
-     * Constructor con parametros
+     * Constructor with parameters
+     * @version 1.0.0 2022-02-15.
+     * @author Santiago Lezcano santiago.lezcano99@gmail.com
+     * @since 1.0.0 2022-02-15.
+     * @param name name of song type String
+     * @param author person singing the song type String
+     * @param genre genre of each song type String
+     * @param cover Image of song type String
+     * @param description Description of song type String
+     * @param helpDuration attribute with which the duration is done
+     * @param launchDate date of creation of the song
      */
-
     public Song(String name,String author,  String genre, String cover, String description, String helpDuration, String launchDate) {
-
         this.idSong=counter;
         this.name = name;
         this.author = author;
@@ -47,17 +56,11 @@ public class Song {
 
 
     }
-
     /**
-     * Constructor vacio
-     */
-    public Song() {
-    }
-
-
-
-    /**
-     * Getter and Setter
+     * encapsulation
+     * @version 1.0.0 2022-02-15.
+     * @author Santiago Lezcano santiago.lezcano99@gmail.com
+     * @since 1.0.0 2022-02-15.
      */
     public int getIdSong() {
         return idSong;

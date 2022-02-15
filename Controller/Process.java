@@ -4,12 +4,22 @@ import Class.Song;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Process with which the song library will be created
+ * @version 1.0.0 2022-02-15.
+ * @author Santiago Lezcano santiago.lezcano99@gmail.com
+ * @since 1.0.0 2022-02-15.
+ */
 public class Process {
 
     public Process() {
     }
-
+    /**
+     * create of the song library
+     * @version 1.0.0 2022-02-15.
+     * @author Santiago Lezcano santiago.lezcano99@gmail.com
+     * @since 1.0.0 2022-02-15.
+     */
     public List<Song> createlibraryOfSong() {
         List<Song> songList = new ArrayList<Song>();
         Song song1 = new Song("Sobrio","Maluma","Reggaeton","Sobrio.jpge","Sobrio.descripcion","03:55","08/07/2021");

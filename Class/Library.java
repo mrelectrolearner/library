@@ -10,13 +10,6 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Collections;
 
-/*
-import java.util.Comparator;
-import java.util.stream.Collectors;
-=======
-import java.util.*;
-*/
-
 public class Library implements Filter {
     private final List<Song> songList;
 
@@ -25,7 +18,6 @@ public class Library implements Filter {
         Process process= new Process();
         this.songList = process.createlibraryOfSong();
     }
-
 
     @Override
     public List<Song> filterByGenre(String genre) {
@@ -45,7 +37,6 @@ public class Library implements Filter {
         }
         return null;
     }
-
     @Override
     public List<Song> filterByYear(int year) {
         try{
@@ -63,7 +54,6 @@ public class Library implements Filter {
         }
         return null;
     }
-
     @Override
     public List<Song> orderByDuration(Boolean longToShort) {
         /*
@@ -75,7 +65,6 @@ public class Library implements Filter {
         }else{
             return songList.stream().sorted(Comparator.comparingInt(Song::getDuration).reversed()).collect(Collectors.toList());//Descendente
         }*/
-
         //Luis
         try {
             List<Song> filteredSongList = this.songList;
@@ -90,7 +79,6 @@ public class Library implements Filter {
         }
         return null;
     }
-
     @Override
     public List<Song> orderByDate(Boolean oldToNew) {
         try {
