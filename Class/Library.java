@@ -2,14 +2,19 @@ package Class;
 
 import Controller.Filter;
 import Controller.Process;
-
+import SongComparator.DateComparator;
+import SongComparator.DurationComparator;
+/*
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+=======
+import java.util.*;
+*/
 
 public class Library implements Filter {
-    private List<Song> songList;
+    private final List<Song> songList;
 
 
     public Library(){
@@ -20,7 +25,7 @@ public class Library implements Filter {
 
     @Override
     public List<Song> filterByGenre(String genre) {
-        List<Song> filteredSongList =null;
+        List<Song> filteredSongList =new ArrayList<>();
         String songGenre;
         for(Song song:this.songList){
             songGenre =song.getGenre();
@@ -33,12 +38,12 @@ public class Library implements Filter {
     }
 
     @Override
-    public List<Song> filterByYear(String year) {
-        List<Song> filteredSongList =null;
-        String songYear;
+    public List<Song> filterByYear(int year) {
+        List<Song> filteredSongList =new ArrayList<>();
+        int songYear;
         for(Song song: this.songList){
-            songYear=song.getLaunchDate();
-            if (songYear.equalsIgnoreCase(year)){
+            songYear=song.getLaunchDate().get(Calendar.YEAR);
+            if (songYear==year){
                 filteredSongList.add(song);
             }
 
@@ -48,7 +53,8 @@ public class Library implements Filter {
     }
 
     @Override
-    public List<Song> orderByDuration(Boolean longToShort) {
+    public List<Song> orderByDuration(Boolean longToShort) {/*
+
         if(longToShort){
             //songList.sort((songList.get(0),songList.get(1)) -> (songList.get(0).getDuration().compareTo(songList.get(1).getDuration())));
             //Collections.sort(songList,(s1,s2)-> s1.getDuration().compareTo(s2.setDuration()));
@@ -56,11 +62,32 @@ public class Library implements Filter {
         }else{
             return songList.stream().sorted(Comparator.comparingInt(Song::getDuration).reversed()).collect(Collectors.toList());//Descendente
         }
+
+        List<Song> filteredSongList=this.songList;
+        if(longToShort) {
+            Collections.sort(filteredSongList, new DurationComparator());
+        }else {
+            Collections.sort(filteredSongList,new DurationComparator().reversed());
+        }
+        return filteredSongList;
+*/
     }
 
     @Override
     public List<Song> orderByDate(Boolean oldToNew) {
-        return null;
+        List<Song> filteredSongList=this.songList;
+        if(oldToNew) {
+            Collections.sort(filteredSongList, new DateComparator());
+        }else {
+            Collections.sort(filteredSongList,new DateComparator().reversed());
+        }
+
+        return filteredSongList;
     }
+
+    public List<Song> getSongList() {
+        return songList;
+    }
+
 }
 
