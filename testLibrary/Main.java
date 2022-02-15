@@ -8,7 +8,8 @@ import Class.User;
 /**
  * Representa la interface con el usuario y sus operaciones basicas.
  * @version 1.0.0 2022-02-15.
- * @author  Luis Felipe Rivas- luisfelorivas@gmail.com
+ * @author Santiago Lezcano santiago.lezcano99@gmail.com
+ *          Luis Felipe Rivas- luisfelorivas@gmail.com
  * @since 1.0.0 2022-02-15.
  */
 public class Main {
