@@ -11,6 +11,7 @@ public class Song {
     /**
      * Atributos de la clase
      */
+    private static int counter;
     private int idSong=0;
     private String name;
     private String genre;
@@ -30,18 +31,19 @@ public class Song {
 
     public Song(String name,String author,  String genre, String cover, String description, String helpDuration, String launchDate) {
 
-        this.idSong+=1;
+        this.idSong=counter;
         this.name = name;
         this.author = author;
         this.genre = genre;
         this.cover = cover;
         this.description = description;
-        this.duration = Integer.parseInt(helpDuration.substring(0,1)) + Integer.parseInt(helpDuration.substring(3,4));
+        this.duration = Integer.parseInt(helpDuration.substring(0,2))*100 + Integer.parseInt(helpDuration.substring(3,5));
         int songYear=Integer.parseInt(launchDate.substring(6,10));
         int songMonth=Integer.parseInt(launchDate.substring(3,5));
         int songDay=Integer.parseInt(launchDate.substring(0,2));
         this.launchDate = new GregorianCalendar(songYear,0,songDay);
         this.launchDate.add(Calendar.MONTH, songMonth);
+        counter+=1;
 
 
     }
