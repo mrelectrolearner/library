@@ -6,7 +6,7 @@ import Class.Library;
 import Class.Song;
 import Class.User;
 /**
- * Representa la interface con el usuario y sus operaciones basicas.
+ * Represent the interface show to the user and its interaction with the library.
  * @version 1.0.0 2022-02-15.
  * @author Santiago Lezcano santiago.lezcano99@gmail.com
  *          Luis Felipe Rivas- luisfelorivas@gmail.com
@@ -14,8 +14,8 @@ import Class.User;
  */
 public class Main {
     /**
-     * Ejecuta el programa y le permite al usuario interactuar con la biblioteca de canciones.
-     * @param args
+     *Execute the program and allow the user interact with a library.
+     *
      */
     public static void main(String[] args) {
         try {
@@ -72,12 +72,14 @@ public class Main {
                             break;
                         case 8:
 
-                            System.out.println("Select a song from the library: \n");
+
                             printPlaylist(library.getSongList());
+                            System.out.println("\nSelect a song from the library: ");
                             int selectSong = scanner.nextInt();
                             Song newSong = library.getSongList().get(selectSong);
-                            user.addSongToPlaylist(newSong);
                             System.out.println("The song: " + newSong.getName() + " was added to your playlist \n");
+                            user.addSongToPlaylist(newSong);
+
 
                             break;
                         default:
@@ -91,7 +93,7 @@ public class Main {
                 }
             }
         }catch (Exception exc){
-            System.out.println(""+ exc);
+            System.out.println(exc);
 
         }
 

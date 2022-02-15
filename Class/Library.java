@@ -12,7 +12,7 @@ import java.util.Collections;
 
 
 /**
- * Representa una biblioteca de canciones y  algunas de sus operaciones basicas de orden y filtrado.
+ * Represent the library of songs and its basic operations.
  * @version 1.0.0 2022-02-15.
  * @author Santiago Lezcano santiago.lezcano99@gmail.com
  *         Luis Felipe Rivas- luisfelorivas@gmail.com
@@ -22,7 +22,7 @@ public class Library implements Filter {
     private final List<Song> songList;
 
     /**
-     * Instancia la libreria de canciones
+     * Instance the library.
      */
     public Library(){
         Process process= new Process();
@@ -30,9 +30,9 @@ public class Library implements Filter {
     }
 
     /**
-     * Filtra la libreria de canciones por genero.
-     * @param genre genero usado para filtrar la libreria.
-     * @return lista de canciones filtrada por un género.
+     * Filter the library by genre.
+     * @param genre genre use for filter the songs.
+     * @return playlist filter by genre.
      */
     @Override
     public List<Song> filterByGenre(String genre) {
@@ -49,9 +49,9 @@ public class Library implements Filter {
     }
 
     /**
-     * Filtra la libreria de canciones por año de lanzamiento.
-     * @param year int año de lanzamiento usado para filtrar la libreria.
-     * @return List<Song> Lista de canciones filtrada por un año de lanzamiento.
+     * Filter the library by the launch year.
+     * @param year int the launch year use to filter the library.
+     * @return List<Song> playlist filter by year.
      */
     @Override
     public List<Song> filterByYear(int year) {
@@ -67,9 +67,9 @@ public class Library implements Filter {
     }
 
     /**
-     * Ordena la libreria de canciones por duracion.
-     * @param longToShort boolean determina si la lista de canciones es ordenada de la mas larga a la mas corta.
-     * @return List<Song> lista de canciones ordenadas por duración.
+     * Order the library by duration of the song.
+     * @param longToShort determine if tha song is order from long to short.
+     * @return playlist order by duration.
      */
     @Override
     public List<Song> orderByDuration(Boolean longToShort) {
@@ -84,9 +84,9 @@ public class Library implements Filter {
     }
 
     /**
-     * Ordena la libreria de canciones por fecha.
-     * @param oldToNew boolean determina si la lista de canciones es ordenada de la mas vieja a la mas resiente.
-     * @return List<Song> lista de canciones ordenadas por fecha.
+     * Order the library by Date.
+     * @param oldToNew determine if the library is show from old to new songs.
+     * @return playlist order by date.
      */
     @Override
     public List<Song> orderByDate(Boolean oldToNew) {
@@ -101,8 +101,8 @@ public class Library implements Filter {
     }
 
     /**
-     * Obtiene la lista de canciones de la librería.
-     * @return la lista de canciones de la librería.
+     * get the library's list of songs.
+     * @return library's list of songs.
      */
     public List<Song> getSongList() {
         return songList;
