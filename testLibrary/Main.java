@@ -76,12 +76,14 @@ public class Main {
                             break;
                         case 8:
 
-                            System.out.println("Select a song from the library: \n");
+
                             printPlaylist(library.getSongList());
+                            System.out.println("\nSelect a song from the library: ");
                             int selectSong = scanner.nextInt();
                             Song newSong = library.getSongList().get(selectSong);
-                            user.addSongToPlaylist(newSong);
                             System.out.println("The song: " + newSong.getName() + " was added to your playlist \n");
+                            user.addSongToPlaylist(newSong);
+
 
                             break;
                         default:
@@ -95,7 +97,7 @@ public class Main {
                 }
             }
         }catch (Exception exc){
-            System.out.println(""+ exc);
+            System.out.println(exc);
 
         }
 

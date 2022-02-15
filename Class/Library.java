@@ -10,14 +10,31 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Collections;
 
+
+/**
+ * Represent the library of songs and its basic operations.
+ * @version 1.0.0 2022-02-15.
+ * @author Santiago Lezcano santiago.lezcano99@gmail.com
+ *         Luis Felipe Rivas- luisfelorivas@gmail.com
+ * @since 1.0.0 2022-02-15.
+ */
 public class Library implements Filter {
     private final List<Song> songList;
 
-
+    /**
+     * Instance the library.
+     */
     public Library(){
         Process process= new Process();
         this.songList = process.createlibraryOfSong();
     }
+
+
+    /**
+     * Filter the library by genre.
+     * @param genre genre use for filter the songs.
+     * @return playlist filter by genre.
+     */
 
     @Override
     public List<Song> filterByGenre(String genre) {
@@ -37,6 +54,14 @@ public class Library implements Filter {
         }
         return null;
     }
+
+
+    /**
+     * Filter the library by the launch year.
+     * @param year int the launch year use to filter the library.
+     * @return List<Song> playlist filter by year.
+     */
+
     @Override
     public List<Song> filterByYear(int year) {
         try{
@@ -54,18 +79,16 @@ public class Library implements Filter {
         }
         return null;
     }
+
+    /**
+     * Order the library by duration of the song.
+     * @param longToShort determine if tha song is order from long to short.
+     * @return playlist order by duration.
+     */
+
     @Override
     public List<Song> orderByDuration(Boolean longToShort) {
-        /*
-         //Santiago
-        if(longToShort){
-            //songList.sort((songList.get(0),songList.get(1)) -> (songList.get(0).getDuration().compareTo(songList.get(1).getDuration())));
-            //Collections.sort(songList,(s1,s2)-> s1.getDuration().compareTo(s2.setDuration()));
-            return songList.stream().sorted(Comparator.comparingInt(Song::getDuration)).collect(Collectors.toList());//Ascendente
-        }else{
-            return songList.stream().sorted(Comparator.comparingInt(Song::getDuration).reversed()).collect(Collectors.toList());//Descendente
-        }*/
-        //Luis
+
         try {
             List<Song> filteredSongList = this.songList;
             if (longToShort) {
@@ -79,6 +102,13 @@ public class Library implements Filter {
         }
         return null;
     }
+
+    /**
+     * Order the library by Date.
+     * @param oldToNew determine if the library is show from old to new songs.
+     * @return playlist order by date.
+     */
+
     @Override
     public List<Song> orderByDate(Boolean oldToNew) {
         try {
@@ -95,6 +125,12 @@ public class Library implements Filter {
         }
         return null;
     }
+
+
+    /**
+     * get the library's list of songs.
+     * @return library's list of songs.
+     */
 
     public List<Song> getSongList() {
         return songList;

@@ -5,7 +5,7 @@ import java.util.List;
 import Class.Song;
 
 /**
- * Represent a filter of the library and its basic operations (filter and order).
+ * Represent a filter of the library and its basic order and filter operations.
  * @version 1.0.0 2022-02-15.
  * @author Santiago Lezcano santiago.lezcano99@gmail.com
  *         Luis Felipe Rivas- luisfelorivas@gmail.com
@@ -13,30 +13,30 @@ import Class.Song;
  */
 public interface Filter {
     /**
-     * Filtra la libreria de canciones por genero.
-     * @param genre genero usado para filtrar la libreria.
-     * @return lista de canciones filtrada por un género.
+     * Filter the library by genre.
+     * @param genre genre use for filter the songs.
+     * @return playlist filter by genre.
      */
     List<Song> filterByGenre(String genre);
 
     /**
-     * Filtra la libreria de canciones por año de lanzamiento.
-     * @param year int año de lanzamiento usado para filtrar la libreria.
-     * @return List<Song> Lista de canciones filtrada por un año de lanzamiento.
+     * Filter the library by the launch year.
+     * @param year int the launch year use to filter the library.
+     * @return List<Song> playlist filter by year.
      */
     List<Song> filterByYear(int year);
 
     /**
-     * Ordena la libreria de canciones por duracion.
-     * @param longToShort boolean determina si la lista de canciones es ordenada de la mas larga a la mas corta.
-     * @return List<Song> lista de canciones ordenadas por duración.
+     * Order the library by duration of the song.
+     * @param longToShort determine if tha song is order from long to short.
+     * @return playlist order by duration.
      */
     List<Song> orderByDuration(Boolean longToShort);
 
     /**
-     * Ordena la libreria de canciones por fecha.
-     * @param oldToNew boolean determina si la lista de canciones es ordenada de la mas vieja a la mas resiente.
-     * @return List<Song> lista de canciones ordenadas por fecha.
+     * Order the library by Date.
+     * @param oldToNew determine if the library is show from old to new songs.
+     * @return playlist order by date.
      */
     List<Song> orderByDate(Boolean oldToNew);
 

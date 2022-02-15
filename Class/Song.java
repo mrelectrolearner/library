@@ -46,7 +46,7 @@ public class Song {
         this.genre = genre;
         this.cover = cover;
         this.description = description;
-        this.duration = Integer.parseInt(helpDuration.substring(0,2))*100 + Integer.parseInt(helpDuration.substring(3,5));
+        this.duration = Integer.parseInt(helpDuration.substring(0,2))*60 + Integer.parseInt(helpDuration.substring(3,5));
         int songYear=Integer.parseInt(launchDate.substring(6,10));
         int songMonth=Integer.parseInt(launchDate.substring(3,5));
         int songDay=Integer.parseInt(launchDate.substring(0,2));
