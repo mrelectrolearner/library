@@ -2,7 +2,12 @@ package SongComparator;
 
 import java.util.Comparator;
 import Class.Song;
-
+/**
+ * Implement a comparator that allow to order the songs by the launch date.
+ * @version 1.0.0 2022-02-15.
+ * @author Luis Felipe Rivas - luisfelorivas@gmail.com
+ * @since 1.0.0 2022-02-15.
+ */
 public class DurationComparator implements Comparator {
     /**
      * Compares its two arguments for order.  Returns a negative integer,
