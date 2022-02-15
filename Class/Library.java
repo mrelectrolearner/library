@@ -4,16 +4,14 @@ import Controller.Filter;
 import Controller.Process;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class Library implements Filter,Comparable<Song> {
+public class Library implements Filter {
     private List<Song> songList;
-    Song song;
 
-    @Override
-    public int compareTo(Song o) {
-        return 0;
-    }
+
     public Library(){
         Process process= new Process();
         this.songList = process.createlibraryOfSong();
@@ -51,15 +49,18 @@ public class Library implements Filter,Comparable<Song> {
 
     @Override
     public List<Song> orderByDuration(Boolean longToShort) {
-        Collections.sort(this.songList.);
-        return null;
+        if(longToShort){
+            //songList.sort((songList.get(0),songList.get(1)) -> (songList.get(0).getDuration().compareTo(songList.get(1).getDuration())));
+            //Collections.sort(songList,(s1,s2)-> s1.getDuration().compareTo(s2.setDuration()));
+            return songList.stream().sorted(Comparator.comparingInt(Song::getDuration)).collect(Collectors.toList());//Ascendente
+        }else{
+            return songList.stream().sorted(Comparator.comparingInt(Song::getDuration).reversed()).collect(Collectors.toList());//Descendente
+        }
     }
 
     @Override
     public List<Song> orderByDate(Boolean oldToNew) {
         return null;
     }
-
-
 }
 
