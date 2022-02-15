@@ -16,7 +16,6 @@ public class Process {
     }
     /**
      * create of the song library
-     * @version 1.0.0 2022-02-15.
      * @author Santiago Lezcano santiago.lezcano99@gmail.com
      * @since 1.0.0 2022-02-15.
      */
