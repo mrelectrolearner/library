@@ -9,9 +9,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Collections;
+
+/*
 import java.util.Comparator;
 import java.util.stream.Collectors;
-/*
 
 
 
@@ -61,6 +62,7 @@ public class Library implements Filter {
 
     @Override
     public List<Song> orderByDuration(Boolean longToShort) {
+        /*
          //Santiago
         if(longToShort){
             //songList.sort((songList.get(0),songList.get(1)) -> (songList.get(0).getDuration().compareTo(songList.get(1).getDuration())));
@@ -68,8 +70,8 @@ public class Library implements Filter {
             return songList.stream().sorted(Comparator.comparingInt(Song::getDuration)).collect(Collectors.toList());//Ascendente
         }else{
             return songList.stream().sorted(Comparator.comparingInt(Song::getDuration).reversed()).collect(Collectors.toList());//Descendente
-        }
-        /*
+        }*/
+
         //Luis
         List<Song> filteredSongList=this.songList;
         if(longToShort) {
@@ -78,7 +80,7 @@ public class Library implements Filter {
             Collections.sort(filteredSongList,new DurationComparator().reversed());
         }
         return filteredSongList;
-*/
+
     }
 
     @Override
