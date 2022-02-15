@@ -1,8 +1,8 @@
 # Library
 This is the homework 3 of the  *cantera sofka*  program.
 
-In it was developed an application that allow to administrate a
-songs list.
+In it was developed an application that allow to administrate
+songs lists.
 
 it contains:
 
